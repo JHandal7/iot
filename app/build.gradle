@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.iot'
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
+
+
+    defaultConfig {
+        applicationId "com.example.iot"
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    // in below line we are adding configurations to our project.
+    configurations.all {
+        // in below line we are adding strategy for each dependency and requesting the details
+        resolutionStrategy.eachDependency {DependencyResolveDetails details ->
+            // on below line we are getting to see the details using requested.
+            def requested = details.requested
+            // in below line we are requesting a group.
+            if (requested.group == 'com.android.support'){
+                // on below line we are checking if the request is a group and checking if it starts with com.android.support.
+                if(!requested.name.startsWith("multidex")){
+                    // if the requested name starts with multi dex then we are displaying the use version which is given below.
+                    details.useVersion '25.3.0'
+                }
+            }
+        }
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'com.nex3z:notification-badge:1.0.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "com.google.gms:google-services:4.3.14"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}

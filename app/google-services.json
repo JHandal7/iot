@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "293791728900",
+    "firebase_url": "https://iotproyect-2fe4c-default-rtdb.firebaseio.com",
+    "project_id": "iotproyect-2fe4c",
+    "storage_bucket": "iotproyect-2fe4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293791728900:android:11d07a175d1aac2cd77c51",
+        "android_client_info": {
+          "package_name": "com.example.iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293791728900-adf6pka6g3n030g4lakjqi8snvd7gi3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0B1se--d0-fZlnjFVUR4nGRiwXYt2fLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293791728900-adf6pka6g3n030g4lakjqi8snvd7gi3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
